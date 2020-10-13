@@ -16,7 +16,6 @@ function divisao(a, b) { return a / b }
 function subtracao(a, b) { return a - b }
 
 
-//fn -> 3 * 7
 //calcular(3)(7)(fn)
 function calcular(x) {
     return function (y) {
@@ -27,6 +26,8 @@ function calcular(x) {
 }
 
 
-const result = calcular(1)(2)(divisao)
+const result = calcular(3)(7)(multi)
+const result2 = calcular(30)(5)(divisao)
 
 console.log(result);
+console.log(result2);
