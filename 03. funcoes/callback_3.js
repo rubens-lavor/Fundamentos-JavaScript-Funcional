@@ -24,3 +24,20 @@ const getTotal = item => item.preco * item.qtde
 
 console.log(carrinho.map(getNome))
 console.log(carrinho.map(getTotal))
+
+
+//meu map
+Array.prototype.meuMap = function(fn){
+    const mapped = []
+    for (let i = 0; i < this.length; i++) {
+        const result = fn(this[i],i,this)
+        mapped.push(result)
+    }
+
+    return mapped
+
+}
+
+console.log("meu map")
+console.log(carrinho.meuMap(getNome))
+console.log(carrinho.meuMap(getTotal))
