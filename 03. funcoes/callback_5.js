@@ -10,19 +10,12 @@ const carrinho = [
 
 
 const getTotal = item => item.qtde * item.preco
-
-
 const totais = carrinho.map(getTotal)
-
-
 console.log(totais);
-
 const somar = (acc, el) => {
     console.log(acc + " + " + el);
     return acc + el
 }
-
-const totalGeral = totais.reduce(somar)
-
+const totalGeral = totais.reduce(somar, 0)
 
 console.log(totalGeral);
