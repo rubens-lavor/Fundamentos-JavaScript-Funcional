@@ -31,7 +31,7 @@ console.log("\nProdutos frágeis: ");
 console.log(fragil);
 console.log("\nQuantidade e Preço: ");
 console.log(qtdePreco);
-console.log("\nmedia: " + media);
+console.log("\nmedia 1: " + media + "\n");
 
 
 //1. fragil: true
@@ -48,12 +48,21 @@ const media2 = carrinho
     .reduce((acc, el) => {
         const novaQtde = acc.qtde + 1
         const novoTotal = acc.total + el
+        
+        console.log({
+            qtde: novaQtde,
+            total: novoTotal,
+            media: novoTotal / novaQtde
+        });
+
         return {
             qtde: novaQtde,
             total: novoTotal,
             media: novoTotal / novaQtde
         }
     }, { qtde: 0, total: 0, media: 0 })
+    //.media
 
+console.log("\nmédia 2: ")
 console.log(media2);
 console.log("média 2: " + media2.media);
