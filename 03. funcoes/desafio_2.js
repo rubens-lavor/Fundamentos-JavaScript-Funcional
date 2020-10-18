@@ -15,7 +15,7 @@ const carrinho = [
 const getFragil = item => item.fragil
 const getQtdePreco = item => {
     return ({
-        qtde: item.qtde, 
+        qtde: item.qtde,
         preco: item.preco
     })
 }
@@ -23,9 +23,9 @@ const getQtdePreco = item => {
 const fragil = carrinho.filter(getFragil)
 const qtdePreco = carrinho.map(getQtdePreco)
 
-const getPreco = (acc, item) => acc + item.preco 
+const getPreco = (acc, item) => acc + item.preco
 
-const media = carrinho.reduce(getPreco,0)/carrinho.length
+const media = carrinho.reduce(getPreco, 0) / carrinho.length
 
 console.log("\nProdutos frágeis: ");
 console.log(fragil);
@@ -42,27 +42,31 @@ console.log("\nmedia 1: " + media + "\n");
 // .filter(el, i, array)
 // .reduce(acc, el, i, array)
 
-const media2 = carrinho
-    .filter(item => item.fragil)
-    .map(item => item.qtde * item.preco)
-    .reduce((acc, el) => {
-        const novaQtde = acc.qtde + 1
-        const novoTotal = acc.total + el
-        
+const isFragil = item => item.fragil
+const getTotal = item => item.qtde * item.preco
+const getMedia2 = (acc, el) => {
+    const novaQtde = acc.qtde + 1
+    const novoTotal = acc.total + el
+
+    /*
         console.log({
             qtde: novaQtde,
             total: novoTotal,
             media: novoTotal / novaQtde
         });
+    */
 
-        return {
-            qtde: novaQtde,
-            total: novoTotal,
-            media: novoTotal / novaQtde
-        }
-    }, { qtde: 0, total: 0, media: 0 })
-    //.media
+    return {
+        qtde: novaQtde,
+        total: novoTotal,
+        media: novoTotal / novaQtde
+    }
+}
 
-console.log("\nmédia 2: ")
-console.log(media2);
-console.log("média 2: " + media2.media);
+const media2 = carrinho
+    .filter(isFragil)
+    .map(getTotal)
+    .reduce(getMedia2, { qtde: 0, total: 0, media: 0 }).media
+
+
+console.log("média 2: " + media2);
