@@ -27,9 +27,8 @@ const getPreco = (acc, item) => acc + item.preco
 
 const media = carrinho.reduce(getPreco,0)/carrinho.length
 
-
+console.log("\nProdutos frágeis: ");
 console.log(fragil);
-
-console.log("Quantidade e Preço: ");
+console.log("\nQuantidade e Preço: ");
 console.log(qtdePreco);
-console.log("media: " + media);
+console.log("\nmedia: " + media);
