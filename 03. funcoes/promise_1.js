@@ -1,12 +1,20 @@
-let a = 1
-console.log(a);
+//promise
 
-let p = new Promise(function(cumprirPromessa) {
+function primeiroElemento(array){
+    return array[0]
+}
+
+function primeiraLetra(str) {
+    return str[0]
+}
+
+const letraMaiuscula = letra => letra.toUpperCase()
+
+
+new Promise(function(cumprirPromessa) {
     cumprirPromessa(["ana","josé","edu"])
 })
-
-p
-    .then(valor => valor[0])
-    .then(primeiro => primeiro[0])
-    .then(letra => letra.toUpperCase())
-    .then(letraMaiuscula => console.log(letraMaiuscula))
+    .then(primeiroElemento)
+    .then(primeiraLetra)
+    .then(letraMaiuscula)
+    .then(console.log)
