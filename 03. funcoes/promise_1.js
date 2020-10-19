@@ -1,18 +1,12 @@
 //promise
 
-function primeiroElemento(array){
-    return array[0]
-}
-
-function primeiraLetra(str) {
-    return str[0]
-}
-
+const primeiroElemento = (array) => array[0]
+const primeiraLetra = (str) => str[0]
 const letraMaiuscula = letra => letra.toUpperCase()
 
 
-new Promise(function(cumprirPromessa) {
-    cumprirPromessa(["ana","josé","edu"])
+new Promise(function(resolve) {
+    resolve(["ana","josé","edu"])
 })
     .then(primeiroElemento)
     .then(primeiraLetra)
