@@ -4,7 +4,6 @@ const { resolve } = require("path");
 function funcionarOuNao(valor, chanceErro) {
     return new Promise((resolve,reject)=>{
         try {
-            con.log('tempo')
             if (Math.random() < chanceErro) {
                 reject('Ocorreu um erro!')
             }else{
